@@ -6,7 +6,9 @@ public class ButtonMasher : MonoBehaviour {
 
     // Data for our class
     public AudioSource ClickSound; // sound that will play when the button is pressed
+    public TextMesh scoreText; // display text for the players score
 
+    private int score = 0; // the numerical data value of our score
 
 	// Use this for initialization
 	void Start () {
@@ -24,7 +26,13 @@ public class ButtonMasher : MonoBehaviour {
         Debug.Log("OnMouseDown method called");
         //Trigger our clicking sound to play
         ClickSound.Play();
+        // increase the score by 1 
+        score = score + 1;
+        //Update visual score
+        scoreText.text = score.ToString();
     }// End of OnMouseDown()
+
+
 
 
 
