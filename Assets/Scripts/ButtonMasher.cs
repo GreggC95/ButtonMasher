@@ -11,7 +11,7 @@ public class ButtonMasher : MonoBehaviour {
     public float gameLength; // how many seconds the game will last
     public AudioSource gameOverSound; // sound that will play when the game has ended
     public TextMesh messageText; // display text of a message for the players
-
+    public AudioSource startSound; // sound that will play when the button is pressed
 
     private int score = 0; // the numerical data value of our score
     private float timeRemaining = 0; // Numerical Time remaining for our timer
@@ -69,6 +69,10 @@ public class ButtonMasher : MonoBehaviour {
             score = score + 1;
             //Update visual score
             scoreText.text = score.ToString();
+
+            //play start game sound
+            startSound.Play();
+
         }// End of if (gameRunning == true)
         else
         {
